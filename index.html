@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="./dist/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet" />
+    <title>Frontend Mentor | Time tracking dashboard</title>
+  </head>
+  <body
+    class="w-full min-h-100svh py-12 px-6 grid place-items-center bg-myVeryDarkBlue font-mine">
+    <main
+      class="w-full grid grid-rows-7 lg:grid-rows-2 grid-cols-1 lg:grid-cols-4 gap-6 max-w-[500px] lg:max-w-6xl">
+      <header class="w-full rounded-2xl bg-myDarkBlue row-span-2">
+        <section
+          class="w-full grid grid-rows-1 lg:grid-rows-2 grid-cols-3 lg:grid-cols-1 gap-x-5 lg:gap-y-5 bg-myBlue rounded-2xl p-8 lg:py-16 shadow-sm">
+          <img
+            src="./images/image-jeremy.png"
+            alt="jeremy avatar"
+            class="object-contain border-2 border-white rounded-full lg:w-1/2" />
+          <div
+            class="flex flex-col justify-center items-start gap-y-1 col-span-2 lg:row-span-2">
+            <p class="text-myPaleBlue font-normal">Report for</p>
+            <h2 class="text-2xl lg:text-4xl font-thin text-white">
+              Jeremy Robson
+            </h2>
+          </div>
+        </section>
+        <section
+          class="w-full flex lg:flex-col justify-between items-center lg:items-start lg:gap-y-4 px-8 py-6">
+          <input type="radio" name="time" id="daily" class="hidden" checked />
+          <label
+            for="daily"
+            class="text-myBlue hover:text-white text-lg text-center font-medium">
+            Daily
+          </label>
+          <input type="radio" name="time" id="weekly" class="hidden" />
+          <label
+            for="weekly"
+            class="text-myBlue hover:text-white text-lg text-center font-medium">
+            Weekly
+          </label>
+          <input type="radio" name="time" id="monthly" class="hidden" />
+          <label
+            for="monthly"
+            class="text-myBlue hover:text-white text-lg text-center font-medium">
+            Monthly
+          </label>
+        </section>
+      </header>
+      <section
+        class="w-full bg-work bg-no-repeat bg-topRight bg-myLightRedWork pt-10 rounded-2xl">
+        <div
+          class="w-full p-6 rounded-xl bg-myDarkBlue hover:bg-myHoverBlue flex flex-col justify-center items-center gap-1 lg:gap-y-6 lg:h-full">
+          <div class="w-full flex justify-between items-center">
+            <h2 class="text-lg font-medium text-white">Work</h2>
+            <img
+              src="./images/icon-ellipsis.svg"
+              alt=""
+              class="cursor-pointer" />
+          </div>
+          <div
+            class="w-full flex lg:flex-col justify-between items-center lg:items-start lg:gap-y-2">
+            <p class="text-5xl font-thin text-white">
+              <span id="hoursWork"></span>hrs
+            </p>
+            <p class="text-myDesaturatedBlue text-sm" id="previousWork">Last</p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="w-full bg-play bg-no-repeat bg-topRight bg-mySoftBluePlay pt-10 rounded-2xl">
+        <div
+          class="w-full p-6 rounded-xl bg-myDarkBlue hover:bg-myHoverBlue flex flex-col justify-center items-center gap-1 lg:gap-y-6 lg:h-full">
+          <div class="w-full flex justify-between items-center">
+            <h2 class="text-lg font-medium text-white">Play</h2>
+            <img
+              src="./images/icon-ellipsis.svg"
+              alt=""
+              class="cursor-pointer" />
+          </div>
+          <div
+            class="w-full flex lg:flex-col justify-between items-center lg:items-start lg:gap-y-2">
+            <p class="text-5xl font-thin text-white">
+              <span id="hoursPlay"></span>hrs
+            </p>
+            <p class="text-myDesaturatedBlue text-sm" id="previousPlay">Last</p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="w-full bg-study bg-no-repeat bg-topRight bg-myLightRedStudy pt-10 rounded-2xl">
+        <div
+          class="w-full p-6 rounded-xl bg-myDarkBlue hover:bg-myHoverBlue flex flex-col justify-center items-center gap-1 lg:gap-y-6 lg:h-full">
+          <div class="w-full flex justify-between items-center">
+            <h2 class="text-lg font-medium text-white">Study</h2>
+            <img
+              src="./images/icon-ellipsis.svg"
+              alt=""
+              class="cursor-pointer" />
+          </div>
+          <div
+            class="w-full flex lg:flex-col justify-between items-center lg:items-start lg:gap-y-2">
+            <p class="text-5xl font-thin text-white">
+              <span id="hoursStudy"></span>hrs
+            </p>
+            <p class="text-myDesaturatedBlue text-sm" id="previousStudy">
+              Last
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="w-full bg-exercice bg-no-repeat bg-topRight bg-myLimeGreenExercise pt-10 rounded-2xl">
+        <div
+          class="w-full p-6 rounded-xl bg-myDarkBlue hover:bg-myHoverBlue flex flex-col justify-center items-center gap-1 lg:gap-y-6 lg:h-full">
+          <div class="w-full flex justify-between items-center">
+            <h2 class="text-lg font-medium text-white">Exercise</h2>
+            <img
+              src="./images/icon-ellipsis.svg"
+              alt=""
+              class="cursor-pointer" />
+          </div>
+          <div
+            class="w-full flex lg:flex-col justify-between items-center lg:items-start lg:gap-y-2">
+            <p class="text-5xl font-thin text-white">
+              <span id="hoursExercise"></span>hrs
+            </p>
+            <p class="text-myDesaturatedBlue text-sm" id="previousExercise">
+              Last
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="w-full bg-social bg-no-repeat bg-topRight bg-myVioletSocial pt-10 rounded-2xl">
+        <div
+          class="w-full p-6 rounded-xl bg-myDarkBlue hover:bg-myHoverBlue flex flex-col justify-center items-center gap-1 lg:gap-y-6 lg:h-full">
+          <div class="w-full flex justify-between items-center">
+            <h2 class="text-lg font-medium text-white">Social</h2>
+            <img
+              src="./images/icon-ellipsis.svg"
+              alt=""
+              class="cursor-pointer" />
+          </div>
+          <div
+            class="w-full flex lg:flex-col justify-between items-center lg:items-start lg:gap-y-2">
+            <p class="text-5xl font-thin text-white">
+              <span id="hoursSocial"></span>hrs
+            </p>
+            <p class="text-myDesaturatedBlue text-sm" id="previousSocial">
+              Last
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="w-full bg-selfCare bg-no-repeat bg-topRight bg-mySoftOrangeSelfCare pt-10 rounded-2xl">
+        <div
+          class="w-full p-6 rounded-xl bg-myDarkBlue hover:bg-myHoverBlue flex flex-col justify-center items-center gap-1 lg:gap-y-6 lg:h-full">
+          <div class="w-full flex justify-between items-center">
+            <h2 class="text-lg font-medium text-white">Self Care</h2>
+            <img
+              src="./images/icon-ellipsis.svg"
+              alt=""
+              class="cursor-pointer" />
+          </div>
+          <div
+            class="w-full flex lg:flex-col justify-between items-center lg:items-start lg:gap-y-2">
+            <p class="text-5xl font-thin text-white">
+              <span id="hoursSelfCare"></span>hrs
+            </p>
+            <p class="text-myDesaturatedBlue text-sm" id="previousSelfCare">
+              Last
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
